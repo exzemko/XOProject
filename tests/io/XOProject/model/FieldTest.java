@@ -1,5 +1,6 @@
 package io.XOProject.model;
 
+import io.XOProject.model.Exceptions.InvalidPointException;
 import org.junit.Test;
 
 import javax.swing.*;
@@ -31,4 +32,66 @@ public class FieldTest {
 
     }
 
+    @Test
+    public void testGetFigureWhenFigureNotSet() throws Exception {
+
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, 0);
+
+        final Figure actualFigure = field.getFigure(inputPoint);
+
+        assertNull(actualFigure);
+    }
+
+    @Test
+    public void testGetFigureWhenXLessThenZero() throws Exception {
+
+        final Field field = new Field();
+        final Point inputPoint = new Point(-1, 0);
+
+        try {
+            field.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {}
+
+    }
+
+    @Test
+    public void testGetFigureWhenYLessThenZero() throws Exception {
+
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, -1);
+
+        try {
+            field.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {}
+
+    }
+
+    @Test
+    public void testGetFigureWhenXMoreThenSize() throws Exception {
+
+        final Field field = new Field();
+        final Point inputPoint = new Point(field.getSize()+1, 0);
+
+        try {
+            field.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {}
+
+    }
+
+    @Test
+    public void testGetFigureWhenYMoreThenSize() throws Exception {
+
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, field.getSize()+1);
+
+        try {
+            field.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {}
+
+    }
 }

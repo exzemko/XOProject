@@ -20,7 +20,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void getFigure() throws Exception {
+    public void testGetFigure() throws Exception {
 
         final Figure inputValue = Figure.X;
         final Figure expectedValue = inputValue;

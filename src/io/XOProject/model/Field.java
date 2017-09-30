@@ -1,11 +1,9 @@
 package io.XOProject.model;
 
 import io.XOProject.model.Exceptions.AlreadyOccupiedException;
-import io.XOProject.model.Exceptions.AlreadyOccupiedException;
 import io.XOProject.model.Exceptions.InvalidPointException;
 
 import java.awt.*;
-import java.rmi.AlreadyBoundException;
 
 public class Field {
 

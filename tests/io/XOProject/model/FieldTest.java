@@ -4,7 +4,6 @@ import io.XOProject.model.Exceptions.AlreadyOccupiedException;
 import io.XOProject.model.Exceptions.InvalidPointException;
 import org.junit.Test;
 
-import javax.swing.*;
 
 import java.awt.*;
 
